@@ -126,22 +126,22 @@ camera_override_format_from_reserved {
 }
 
 soong_config_module_type {
-    name: "camera_needs_client_info_lib",
+    name: "target_alternative_futex_waiters",
     module_type: "cc_defaults",
     config_namespace: "everestGlobalVars",
-    bool_variables: ["camera_needs_client_info_lib"],
+    bool_variables: ["target_alternative_futex_waiters"],
     properties: [
+        "cflags",
         "cppflags",
-        "shared_libs",
     ],
 }
 
-camera_needs_client_info_lib {
-    name: "camera_needs_client_info_lib_defaults",
+target_alternative_futex_waiters {
+    name: "target_alternative_futex_waiters_defaults",
     soong_config_variables: {
-        camera_needs_client_info_lib: {
-            cppflags: ["-DCAMERA_NEEDS_CLIENT_INFO_LIB"],
-            shared_libs: ["//hardware/oneplus:vendor.oneplus.hardware.camera@1.0"],
+        target_alternative_futex_waiters: {
+            cflags: ["-DTARGET_ALTERNATIVE_FUTEX_WAITERS"],
+            cppflags: ["-DTARGET_ALTERNATIVE_FUTEX_WAITERS"],
         },
     },
 }
